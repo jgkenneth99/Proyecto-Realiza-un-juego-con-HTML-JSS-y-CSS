@@ -1,0 +1,13 @@
+Hare un juego 2D en el que tengas que recoger x numeros de elementos para pasar a la siguiente pantalla,
+tendra enemigos y trampas para interponerse al jugador
+El puntuaje se calculara en un principio con las veces que hayas muerto y con el tiempo total en pasarselo
+La seleccion de dificultad:
+aumentara los enemigos, trampas y tal vez elementos para pasar de nivel
+o la velocidad de enemigos y ciertas trampas
+
+ · Usare setInterval y clearInterval para mover al jugador y comprobar el estado del juego (colisiones con los distintos elementos de la pantalla)
+ · setTimeout y clearTimeout para los movimientos de enemigos o ciertas trampas
+ · Las promesas las incluire para cargar y guardar los puntuajes del juego 
+ · El almacenamiento sera en el localStorage y se comunicará con otra pestaña que se abrirá para mostrar la tabla de puntuaje
+ · Tendra en principio dos teclas de movimiento para izquierda y derecha y el espacio para saltar
+ · stopPropagation() no lo tengo muy claro pero procuraré incluirlo en el menu inicial o la tabla de puntuaje

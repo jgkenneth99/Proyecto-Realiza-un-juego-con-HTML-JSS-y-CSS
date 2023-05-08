@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+
+<body>
+    <div id="pantalla"></div>
+
+    <template id="pantallaMenu">
+        <h1>Bienvenido a Mi Juego</h1>
+        <ul>
+            <li><button id="jugar">Jugar</button></li>
+            <li><button id="dificultad">Seleccionar Dificultad</button></li>
+            <li><button id="controles">Controles</button></li>
+            <li><button id="tutorial">Tutorial</button></li>
+            <li><button id="puntuaje">Puntuaje</button></li>
+        </ul>
+    </template>
+
+    <!--    Aqui iran templates con las distintas pantallas (zonas) del juego     -->
+    <template id="pantallaJuego1">
+        <div id="cuadrado"></div>
+        <p>jugando</p>
+    </template>
+
+    <template id="pantallaDificultad">
+        <h2>Seleccionar Dificultad</h2>
+        <form>
+            <input type="radio" name="dificultad" value="facil" id="facil">
+            <label for="facil">Fácil</label><br>
+            <input type="radio" name="dificultad" value="media" id="media">
+            <label for="media">Media</label><br>
+            <input type="radio" name="dificultad" value="dificil" id="dificil">
+            <label for="dificil">Difícil</label><br>
+            <button type="submit">Guardar</button>
+        </form>
+    </template>
+
+    <template id="pantallaControles">
+        <h2>Controles</h2>
+        <ul>
+            <li>Movimiento: A y D</li>
+            <li>Saltar: Barra espaciadora</li>
+        </ul>
+    </template>
+
+    <template id="pantallaTutorial">
+        <h2>Tutorial</h2>
+        <p>Recoge las estrellas en el menor tiempo posible</p>
+    </template>
+
+    <template id="pantallaPuntuaje">
+        <h2>Tabla puntuaje</h2>
+        <table>
+            <tr>
+                <th>Posición</th>
+                <th>Nombre</th>
+                <th>Puntos</th>
+                <th>Fecha</th>
+              </tr>
+              <tr>
+                <th>1.</th>
+                <th>ejemplo</th>
+                <th>23</th>
+                <th>23-2-23</th>
+              </tr>
+              <tr>
+                <th>2.</th>
+                <th>ejemplo</th>
+                <th>21</th>
+                <th>24-2-23</th>
+              </tr>
+        </table>
+    </template>
+
+
+
+    <script src="juego.js"></script>
+</body>
+
+</html>
