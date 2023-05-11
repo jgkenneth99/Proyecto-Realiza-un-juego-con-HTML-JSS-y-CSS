@@ -1,8 +1,8 @@
 # Segunda version del menú y del juego
 
-He hecho plataformas para probar y completar bien la mecanica de los saltos 
+He hecho plataformas, he añadido la gravedad para completar bien la mecanica de los saltos 
 
-Y tambien he estilizado un poco el menú
+y tambien he estilizado un poco el menú
 
 # Elementos actuales del menu:
 Botones:
