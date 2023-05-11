@@ -33,16 +33,23 @@ puntuajeBtn.addEventListener('click', function () {
 
 
 function start(/*jugador, enemigos, trampas, estrellas*/) {
-    const cuadrado = document.getElementById('cuadrado'); // lo que controle al jugador
+    const cuadrado = document.getElementById('personaje1'); // lo que controle al jugador
     const jugador = { //temporal que este aquí
         leftPos: 0,
         topPos: 500,
         vidas: 0,
-        salntando: false
+        enElAire: true,
+        saltando: false
     };
+    // Colisiones de estructuras
+    let objetosRect = [];
+    const objetosColision = document.querySelectorAll('.estructura');
+    objetosColision.forEach(objeto => {
+        objetosRect.push(objeto.getBoundingClientRect());
+    });
 
     //Eventos de teclas (de momento solo se desplaza de izq a derch y salta)
-    const movimientoJugador = {dx: 0, dy: 0};
+    const movimientoJugador = { dx: 0, dy: 0 };
 
     document.addEventListener('keydown', (event) => {
         const key = event.key;
@@ -52,10 +59,15 @@ function start(/*jugador, enemigos, trampas, estrellas*/) {
             movimientoJugador.dx = 10;
         } else if (key === 'w') {
             //movimientoJugador.dy = -10;
+            // saltar(); //test
         } else if (key === 's') {
             //movimientoJugador.dy = 10;
-        }else if (key === ' ') {
-            saltar();
+        } else if (key === ' ') {
+            if (!jugador.enElAire && !jugador.saltando) {
+                saltar();
+            }
+        } else if (key == 'z') {
+            console.log("En el aire? " + jugador.enElAire); //test
         }
     });
     document.addEventListener('keyup', (event) => {
@@ -68,14 +80,47 @@ function start(/*jugador, enemigos, trampas, estrellas*/) {
     });
 
     //Funcion para actualizar y comprobar el estado del juego
+    const gravedad = 500; // Valor de gravedad en píxeles por segundo al cuadrado
     const intervaloUpdate = 16;  //milisegundos
     function update() {
         moverJugador();
+        detectarColision();
+        aplicarGravedad();
     }
     setInterval(update, intervaloUpdate);
     /*******************************************************/
 
-    function moverJugador(){
+
+    function detectarColision() {
+
+        // Obtener la posición y dimensiones del jugador
+        const jugadorRect = cuadrado.getBoundingClientRect();
+
+        for (let i = 0; i < objetosRect.length; i++) {
+            const objetoRect = objetosRect[i];
+            if (jugadorRect.right > objetoRect.left &&
+                jugadorRect.left < objetoRect.right &&
+                jugadorRect.bottom > objetoRect.top &&
+                jugadorRect.top < objetoRect.bottom) {
+                jugador.enElAire = false;
+                console.log("colisionando");
+                break;
+            } else {// Si no hay colisión con ningún objeto, el jugador está en el aire
+                jugador.enElAire = true;
+                console.log("enelaire");
+            }
+        }
+
+    };
+
+    function aplicarGravedad() {
+        if (jugador.enElAire) {
+            jugador.topPos += gravedad * intervaloUpdate / 1000; // Aumentar la posición vertical en función del valor de gravedad y el tiempo desde la última actualización
+            cuadrado.style.top = jugador.topPos + 'px';
+        }
+    }
+
+    function moverJugador() {
         jugador.leftPos += movimientoJugador.dx;
         jugador.topPos += movimientoJugador.dy;
         cuadrado.style.left = jugador.leftPos + 'px';
@@ -83,24 +128,30 @@ function start(/*jugador, enemigos, trampas, estrellas*/) {
     }
 
     function saltar() {
-        let alturaSalto = 120; // La altura del salto en píxeles
-        let duracionSalto = 500; // La duración del salto en milisegundos
+        jugador.saltando = true;
+        let alturaSalto = 200; // La altura del salto en píxeles
+        let duracionSalto = 1000; // La duración del salto en milisegundos
         let posicionInicial = jugador.topPos; // La posición vertical inicial del jugador
         let tiempo = 0;
-        let intervalo = setInterval(function() {
-            if (tiempo >= duracionSalto) {
+        let intervalo = setInterval(function () {
+            if (tiempo >= duracionSalto / 2) {
                 clearInterval(intervalo);
+                jugador.saltando = false;
+                console.log("fin salto");
                 return;
             }
             tiempo += intervaloUpdate;
             let alturaActual = alturaSalto * Math.sin(Math.PI * tiempo / duracionSalto);
+            alturaActual -= 0.5 * gravedad * Math.pow(tiempo / 1000, 2); // Fórmula ajustada para la gravedad
             jugador.topPos = posicionInicial - alturaActual;
             cuadrado.style.top = jugador.topPos + 'px';
+
         }, intervaloUpdate);
     }
+
+
+
 }
-
-
 
 
 

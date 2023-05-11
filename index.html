@@ -25,20 +25,21 @@
 
     <!--    Aqui iran templates con las distintas pantallas (zonas) del juego     -->
     <template id="pantallaJuego1">
-        <div id="cuadrado"></div>
-        <p>jugando</p>
+        <div id="personaje1"></div>
+        <div class="estructura" id="suelo1-1"></div>
+        <div class="estructura" id="suelo1-2"></div>
     </template>
 
     <template id="pantallaDificultad">
         <h2>Seleccionar Dificultad</h2>
-        <form>
+        <form id="dificultad-form">
             <input type="radio" name="dificultad" value="facil" id="facil">
             <label for="facil">Fácil</label><br>
             <input type="radio" name="dificultad" value="media" id="media">
             <label for="media">Media</label><br>
             <input type="radio" name="dificultad" value="dificil" id="dificil">
             <label for="dificil">Difícil</label><br>
-            <button type="submit">Guardar</button>
+            <button type="submit" id="boton-form">Guardar</button>
         </form>
     </template>
 

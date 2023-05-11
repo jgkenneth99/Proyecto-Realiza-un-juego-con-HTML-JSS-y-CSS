@@ -1,4 +1,8 @@
-# Primera version del menú y del juego
+# Segunda version del menú y del juego
+
+He hecho plataformas para probar y completar bien la mecanica de los saltos 
+
+Y tambien he estilizado un poco el menú
 
 # Elementos actuales del menu:
 Botones:
@@ -16,13 +20,15 @@ Botones:
 # Funcionalidades del juego añadidas:
  · Movimiento del jugador
  
- · Salto (incompleto, tiene errores)
+ · Salto
+
+ · Plataformas (estructuras)
+
+ · Colision
 
 # A desarrollar próximamente:
- · Suelos y plataformas en las que saltar y moverse (colisiones)
- 
- · Completar el movimiento de salto con al menos los suelos ya creados
- 
- · Estilizar menú
- 
- · Crear trampas
+  · Crear trampas
+
+ · Crear enemigos
+
+ · Estilizar más el menú
