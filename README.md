@@ -1,8 +1,10 @@
-# Segunda version del menú y del juego
+# Tercera version del menú y del juego
 
 He creado la primera pantalla con su sistema de puntos para completarla (recoger estrellas) y 
 
 con pinchos que resetean a la posicion del principio si se tocan
+
+y animaciones a las estrellas y cuando mueres
 
 # Elementos actuales del menu:
 Botones:
