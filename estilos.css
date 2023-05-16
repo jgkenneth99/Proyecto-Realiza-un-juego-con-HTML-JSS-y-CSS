@@ -4,10 +4,40 @@
     background-color: blue;
     position: absolute;
 }
+/* animaciones */
+.explosion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 390px;
+  height: 300px;
+  background-image: url('explosion.png');
+  background-size: cover;
+  animation: explosion 1s steps(60) forwards;
+  z-index: 1;
+}
+
+@keyframes explosion {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
 /* pantallajuego1 */
+
 .estructura{
     background-color: rgb(139, 101, 28);
-}
+    overflow: hidden;
+    width: 100vw; /* Ajusta el ancho al 100% del viewport */
+    height: 100vh; /* Ajusta la altura al 100% del viewport */
+    max-width: 100%; /* Evita que el ancho exceda el tamaño del viewport */
+    max-height: 100%; /* Evita que la altura exceda el tamaño del viewport */
+    box-sizing: border-box; /* Incluye el tamaño del borde y el padding en el ancho y la altura */
+  }
 #suelo1-1 {
     position: absolute;
     bottom: 0;
@@ -16,12 +46,117 @@
     height: 50px;
 }
 #suelo1-2 {
-    position: absolute;
-    bottom: 150px;
-    left: 400px;
-    width: 100%;
-    height: 20px;
+  position: absolute;
+  bottom: 136px;
+  left: 411px;
+  width: 1185px;
+  height: 15px;
 }
+#suelo1-3 {
+  position: absolute;
+  bottom: 329px;
+  left: -12px;
+  width: 223px;
+  height: 14px;
+}
+#suelo1-4 {
+  position: absolute;
+  bottom: 553px;
+  left: 327px;
+  width: 150px;
+  height: 13px;
+}
+#suelo1-5 {
+  position: absolute;
+  bottom: 703px;
+  left: -6px;
+  width: 250px;
+  height: 13px;
+}
+#suelo1-6 {
+  position: absolute;
+  bottom: 293px;
+  left: 978px;
+  width: 445px;
+  height: 13px;
+}
+#suelo1-7 {
+  position: absolute;
+  bottom: 419px;
+  left: 593px;
+  width: 250px;
+  height: 13px;
+}
+#suelo1-8 {
+  position: absolute;
+  bottom: 790px;
+  left: -6px;
+  width: 250px;
+  height: 13px;
+}
+
+.trampa{
+  position: absolute;
+  background-image: url('pinchos.png');
+  background-size: cover;
+    width: 115px;
+    height: 50px;
+}
+
+#trampa1-1 {
+  position: absolute;
+  bottom: 50px;
+  left: 150px;
+}
+
+#trampa1-2 {
+  position: absolute;
+  bottom: 151px;
+  left: 411px;
+}
+
+#trampa1-3 {
+  position: absolute;
+  bottom: 565px;
+  left: 344px;
+}
+.estrella {
+  width: 80px;
+  height: 80px;
+  background-image: url('estrella.png');
+  background-size: cover;
+  animation: girar 3s infinite linear;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#estrella1-1 {
+  position: absolute;
+  bottom: 168px;
+  left: 601px;
+}
+#estrella1-2 {
+  position: absolute;
+  bottom: 354px;
+  left: 16px;
+}
+#estrella1-3 {
+  position: absolute;
+  bottom: 843px;
+  left: 395px;
+}
+
+
+
+
+
+
 
 /**/
 body{
