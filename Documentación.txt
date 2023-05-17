@@ -1,0 +1,54 @@
+ · function imprimirPantalla(template)
+recibe un elemento html <template> para hacerlo visible en <div id="pantalla"></div>
+
+ · function asignarVariablesBotonesMenu()
+no se pueden asignar las variables de los elementos html hasta que el template esta cargado
+asi que esto vuelve a asignar esas variables y a añadirles los eventos de onclick
+ · en el evento 'onclick' de dificultadBtn se obtiene y se guarda el valor de la dificultad escogida (facil en defecto)
+
+ · function start(jugador, nivelpantalla)
+se pasa un objeto jugador con los attributos necesarios para iniciar la pantalla de juego y nivelpantalla 1 porque es el primero
+segun la dificultad se añade una cuentaAtras 
+se guarda la posicion inicial del jugador por si muriese
+let objetosRect = []; almacena las posiciones de las estructuras del mapa y let trampasRect = []; con las trampas
+se añaden los eventos keydown a las teclas 'a' 'd' y ' ' para añadir velocidades y saltar y keyup para quitar la velocidad
+
+ · function update()
+va contando el tiempo mediante intervalos y se encarga de actualizar la posicion del jugador y
+comprobar colisiones, jugador.movimientoBloqueado es para una pequeña animacion de muerte
+ · function iniciarIntervalo() y function detenerIntervalo()
+inician o detienen esta funcion update()
+
+ · function detectarColision()
+1 comprueba estructuras para no caer al vacio
+2 comprueba trampas para matar al jugador
+3 comprueba las estrellas para recogerlas y si no quedan en pantalla pasa a la siguiente
+
+ · function muerte()
+crea un elemento html, se situa sobre el jugador y usa el css necesario para una animacion en lo que dura el setTimeout()
+tambien bloquea el movimiento del jugador
+
+ · function aplicarGravedad()
+aplica una gravedad al jugador para que tenga caida (es llamado todo el rato desde update())
+
+ · function moverJugador()
+si esta muy abajo muere
+segun este objeto iniciado antes: const movimientoJugador = { dx: 0, dy: 0 }; que se modifica con 
+los eventos de las teclas y el salto, se va reposicionando al jugador 
+
+ · function completarPantalla()
+se para el update() y segun el nivel de pantalla en la que se este se pasa a la siguiente llamando a start() de nuevo
+o se acaba el juego y se para el temporizador se calcula la puntuacion, se imprime lo necesario por pantalla
+y se registra el puntuaje si ha sido valido (supera el juego antes de la cuenta atras) más un boton para regresar al menú
+
+ · function iniciarTemporizador(cuentaAtras) y function detenerTemporizador()
+simplemente estan para llevar la cuenta atras
+
+ · function obtenerPuntuajes() 
+Devuelve el LocalStorage en forma de promesa 
+
+ · function registrarPuntuaje(puntuacion)
+actualiza el localStorage con un elemento string separado por "-" en el array puntuajes[i]
+
+ · function imprimirPuntuaje()
+imprime en la tabla el LocalStorage

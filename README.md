@@ -1,23 +1,19 @@
-# Tercera version del menú y del juego
+# Cuarta version del menú y del juego
 
-He creado la primera pantalla con su sistema de puntos para completarla (recoger estrellas) y 
-
-con pinchos que resetean a la posicion del principio si se tocan
-
-y animaciones a las estrellas y cuando mueres
+He creado las dos pantallas, sistema de puntuaje, mejoras del diseño y temporizadores
 
 # Elementos actuales del menu:
 Botones:
 
  · jugar
 	
- · seleccionar dificultad(no funcional)
+ · seleccionar dificultad
  
  · controles
  
- · tutorial(incompleto)
+ · tutorial
  
- · tabla de puntos(no funcional)
+ · tabla de puntos
 
 # Funcionalidades del juego añadidas:
  · Movimiento del jugador
@@ -32,11 +28,20 @@ Botones:
 
  · Estrellas para pasar pantalla
 
- · Primera pantalla completada
+ · Dos pantallas (niveles)
 
-# A desarrollar próximamente:
- · Crear enemigos
+ · Seleccion de dificultad
 
- · Estilizar más el menú
+ · Implementa puntuaje en LocalStorage 
+ 
+ · temporizadores ocultos
 
- · Alguna pantalla más
+# Comentarios finales
+
+No he sabido donde usar el stopPropagation
+
+He usado templates en el codigo html lo cual lo ha complicado pero he aprendido a usarlos y mejora la legibilidad
+
+Es un juego contrareloj en el que la seleccion de dificultad da más puntos pero esta el riesgo de pasarse se tiempo y que no cuente
+
+En el navegador Edge a mi por lo menos bloquea los scripts pero permitiendolos funciona bien

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego</title>
+    <link rel="stylesheet" type="text/css" href="Kenneth_Jimenez_PracticaJuego.css">
+</head>
+
+<body>
+    <div id="pantalla"></div>
+
+    <template id="pantallaMenu">
+        <h1>Juego de plataformas</h1>
+        <ul>
+            <li><button id="jugar">Jugar</button></li>
+            <li><button id="dificultad">Seleccionar Dificultad</button></li>
+            <li><button id="controles">Controles</button></li>
+            <li><button id="tutorial">Tutorial</button></li>
+            <li><button id="puntuaje">Puntuaje</button></li>
+        </ul>
+    </template>
+
+    <!--    Aqui iran templates con las distintas pantallas (zonas) del juego     -->
+    <template id="pantallaJuego1">
+        <div id="personaje1"></div>
+        <div id="contenedor-explosion"></div>
+        <div class="estructura" id="suelo1-1"></div>
+        <div class="estructura" id="suelo1-2"></div>
+        <div class="estructura" id="suelo1-3"></div>
+        <div class="estructura" id="suelo1-4"></div>
+        <div class="estructura" id="suelo1-5"></div>
+        <div class="estructura" id="suelo1-6"></div>
+        <div class="estructura" id="suelo1-7"></div>
+        <div class="estructura" id="suelo1-8"></div>
+        <div class="trampa" id="trampa1-1"></div>
+        <div class="trampa" id="trampa1-2"></div>
+        <div class="trampa" id="trampa1-3"></div>
+        <div class="estrella" id="estrella1-1"></div>
+        <div class="estrella" id="estrella1-2"></div>
+        <div class="estrella" id="estrella1-3"></div>
+    </template>
+
+    <template id="pantallaJuego2">
+        <div id="personaje2"></div>
+        <div id="contenedor-explosion"></div>
+        <div class="estructura" id="suelo2-1"></div>
+        <div class="estructura" id="suelo2-2"></div>
+        <div class="estructura" id="suelo2-3"></div>
+        <div class="estructura" id="suelo2-4"></div>
+        <div class="estructura" id="suelo2-5"></div>
+        <div class="estructura" id="suelo2-6"></div>
+        <div class="estructura" id="suelo2-7"></div>
+        <div class="estructura" id="suelo2-8"></div>
+        <div class="trampa" id="trampa2-1"></div>
+        <div class="trampa" id="trampa2-2"></div>
+        <div class="trampa" id="trampa2-3"></div>
+        <div class="trampa" id="trampa2-4"></div>
+        <div class="trampa" id="trampa2-5"></div>
+        <div class="trampa" id="trampa2-6"></div>
+        <div class="estrella" id="estrella2-1"></div>
+        <div class="estrella" id="estrella2-2"></div>
+        <div class="estrella" id="estrella2-3"></div>
+        <div class="estrella" id="estrella2-4"></div>
+    </template>
+
+    <template id="pantallaJuegoFin">
+        <div class="pantalla-juego-fin">
+            <h1>Fin del juego</h1>
+            <p>Segundos: <span id="segundos"></span></p>
+            <p>Puntuación obtenida: <span id="puntuacionObtenida"></span></p>
+            <p id="comentario"></p>
+            <button id="volverMenuBtn">Volver al Menú</button>
+        </div>
+    </template>
+
+    <template id="pantallaDificultad">
+        <h2>Seleccionar Dificultad</h2>
+        <p>Si te pasas en los segundos no se guardara la puntuación</p>
+        <form id="dificultad-form">
+            <input type="radio" name="dificultad" value="facil" id="facil">
+            <label for="facil">Fácil 120s</label><br>
+            <input type="radio" name="dificultad" value="normal" id="normal">
+            <label for="media">Media 60s</label><br>
+            <input type="radio" name="dificultad" value="dificil" id="dificil">
+            <label for="dificil">Difícil 25s</label><br>
+            <button type="submit" id="boton-form">Guardar</button>
+            <button id="volverMenuBtn">Volver al Menú</button>
+        </form>
+    </template>
+
+    <template id="pantallaControles">
+        <h2>Controles</h2>
+        <ul>
+            <li>Movimiento: A y D</li>
+            <li>Saltar: Barra espaciadora</li>
+        </ul>
+        <button id="volverMenuBtn">Volver al Menú</button>
+    </template>
+
+    <template id="pantallaTutorial">
+        <h2>Tutorial</h2>
+        <p>Recoge las estrellas en el menor tiempo posible, si tardas más segundos que los que dicta la dificultad que hayas seleccionado tu puntuación no será registrada</p>
+        <button id="volverMenuBtn">Volver al Menú</button>
+    </template>
+
+    <template id="pantallaPuntuaje">
+        <h2>Tabla puntuaje</h2>
+        <table id="tablaContainer">
+            <tr>
+                <th>Posición</th>
+                <th>Puntos</th>
+                <th>Dificultad</th>
+            </tr>
+        </table>
+        <button id="volverMenuBtn">Volver al Menú</button>
+    </template>
+
+
+
+    <script src="Kenneth_Jimenez_PracticaJuego.js"></script>
+</body>
+
+</html>

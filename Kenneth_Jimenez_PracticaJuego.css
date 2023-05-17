@@ -1,0 +1,382 @@
+#personaje1 {
+    width: 20px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+}
+#personaje2 {
+  width: 20px;
+  height: 50px;
+  background-color: blue;
+  position: absolute;
+}
+/* animaciones */
+.explosion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 390px;
+  height: 300px;
+  background-image: url('recursos/explosion.png');
+  background-size: cover;
+  animation: explosion 1s steps(60) forwards;
+  z-index: 1;
+}
+
+@keyframes explosion {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.estrella {
+  width: 80px;
+  height: 80px;
+  background-image: url('recursos/estrella.png');
+  background-size: cover;
+  animation: girar 3s infinite linear;
+}
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* elementos comunes*/
+.estructura{
+  background-color: rgb(139, 101, 28);
+  background-image: url(recursos/texturatierra.jpg);
+}
+.trampa{
+  position: absolute;
+  background-image: url('recursos/pinchos.png');
+  background-size: cover;
+    width: 115px;
+    height: 50px;
+}
+
+/* pantallajuego1 */
+
+
+#suelo1-1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+#suelo1-2 {
+  position: absolute;
+  bottom: 136px;
+  left: 411px;
+  width: 1185px;
+  height: 15px;
+}
+#suelo1-3 {
+  position: absolute;
+  bottom: 329px;
+  left: -12px;
+  width: 223px;
+  height: 14px;
+}
+#suelo1-4 {
+  position: absolute;
+  bottom: 553px;
+  left: 327px;
+  width: 150px;
+  height: 13px;
+}
+#suelo1-5 {
+  position: absolute;
+  bottom: 703px;
+  left: -6px;
+  width: 250px;
+  height: 13px;
+}
+#suelo1-6 {
+  position: absolute;
+  bottom: 293px;
+  left: 978px;
+  width: 445px;
+  height: 13px;
+}
+#suelo1-7 {
+  position: absolute;
+  bottom: 419px;
+  left: 593px;
+  width: 250px;
+  height: 13px;
+}
+#suelo1-8 {
+  position: absolute;
+  bottom: 790px;
+  left: -6px;
+  width: 250px;
+  height: 13px;
+}
+#trampa1-1 {
+  position: absolute;
+  bottom: 50px;
+  left: 150px;
+}
+#trampa1-2 {
+  position: absolute;
+  bottom: 151px;
+  left: 411px;
+}
+#trampa1-3 {
+  position: absolute;
+  bottom: 565px;
+  left: 344px;
+}
+#estrella1-1 {
+  position: absolute;
+  bottom: 168px;
+  left: 601px;
+}
+#estrella1-2 {
+  position: absolute;
+  bottom: 354px;
+  left: 16px;
+}
+#estrella1-3 {
+  position: absolute;
+  bottom: 834px;
+  left: 545px;
+}
+
+/* pantallajuego2 */
+
+#suelo2-1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+#suelo2-2 {
+position: absolute;
+bottom: 136px;
+left: 411px;
+width: 1185px;
+height: 15px;
+}
+#suelo2-3 {
+position: absolute;
+bottom: 329px;
+left: -12px;
+width: 223px;
+height: 14px;
+}
+#suelo2-4 {
+  position: absolute;
+  bottom: 553px;
+  left: 35px;
+  width: 150px;
+  height: 13px;
+}
+#suelo2-5 {
+  position: absolute;
+  bottom: 703px;
+  left: 490px;
+  width: 250px;
+  height: 13px;
+}
+#suelo2-6 {
+  position: absolute;
+  bottom: 250px;
+  left: 900px;
+  width: 445px;
+  height: 13px;
+}
+#suelo2-7 {
+  position: absolute;
+  bottom: 419px;
+  left: 593px;
+  width: 250px;
+  height: 13px;
+}
+#suelo2-8 {
+position: absolute;
+bottom: 790px;
+left: -6px;
+width: 250px;
+height: 13px;
+}
+#trampa2-1 {
+  position: absolute;
+  bottom: 343px;
+  left: 95px;
+}
+#trampa2-2 {
+  position: absolute;
+  bottom: 716px;
+  left: 490px;
+}
+#trampa2-3 {
+  position: absolute;
+  bottom: 181px;
+  left: 820px;
+  transform: rotate(270deg);
+}
+#trampa2-4 {
+  position: absolute;
+  bottom: 261px;
+  left: 1008px;
+}
+#trampa2-5 {
+  position: absolute;
+  bottom: 261px;
+  left: 1152px;
+}
+#trampa2-6 {
+  position: absolute;
+  bottom: 261px;
+  left: 1229px;
+}
+#estrella2-1 {
+  position: absolute;
+  bottom: 155px;
+  left: 930px;
+}
+#estrella2-2 {
+position: absolute;
+bottom: 354px;
+left: 16px;
+}
+#estrella2-3 {
+position: absolute;
+bottom: 843px;
+left: 395px;
+}
+#estrella2-4 {
+  position: absolute;
+  bottom: 390px;
+  left: 1216px;
+}
+
+
+/* menú y demás */
+body{
+    background-color: rgb(193, 248, 255);
+    font-family: 'Arial', sans-serif;
+}
+#pantalla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #2c3e50;
+    text-shadow: 1px 1px #fff;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+  /*radio form*/
+.dificultad-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+  }
+  
+  input[type="radio"]:checked {
+    background-color: #3498db;
+    border-color: #3498db;
+  }
+  
+  label {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  form label {
+    text-align: right;
+    display: inline-block;
+    width: 100px; /* ajusta el ancho según tus necesidades */
+    margin-right: 10px; /* añade un margen entre el texto y el input */
+  }
+  #boton-form{
+    margin-top: 2rem;
+  }
+
+  /* PantallajuegoFin */
+  .pantalla-juego-fin {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pantalla-juego-fin h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.pantalla-juego-fin p {
+    font-size: 18px;
+}
+
+.pantalla-juego-fin #puntuacionObtenida {
+    font-weight: bold;
+    color: blue;
+}
+
+
+
